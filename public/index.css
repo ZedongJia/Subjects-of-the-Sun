@@ -1,0 +1,198 @@
+/* global config */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* scrollbar */
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background-color: rgb(41, 32, 9);
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color:rgb(251, 222, 113);
+}
+
+html::-webkit-scrollbar-button {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgb(251, 222, 113);
+}
+
+/* import font-family */
+@font-face {
+  font-family: 'jianhaoti';
+  src: url('./jianhaoti.ttf');
+}
+
+@font-face {
+  font-family: 'kaishu';
+  src: url('./kaishu.ttf');
+}
+
+.jian-title-y {
+  font-size: 26px;
+  font-family: 'jianhaoti';
+  color: rgb(237, 237, 131);
+  text-shadow: 0 1px 10px yellow;
+}
+
+.psg-y {
+  line-height: 2em;
+  font-size: 18px;
+  font-family: 'kaishu';
+  color: rgb(251, 222, 113);
+  text-shadow: none;
+}
+
+.psg-w {
+  line-height: 2em;
+  font-size: 18px;
+  font-family: 'kaishu';
+  color: rgb(250, 250, 250);
+  text-shadow: none;
+}
+
+/* 调用circle外面的div布局，请使用 */
+.layout {
+  pointer-events: none;
+  z-index: -1;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* div 居中字体，请使用 */
+
+.title {
+  cursor: pointer;
+  z-index: 200;
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 180px;
+  font-family: 'jianhaoti';
+  background-image: linear-gradient(
+    to right,
+    rgb(226, 202, 147),
+    rgb(216, 160, 30),
+    black
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 记得给父级设个relative */
+.pic-center {
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pic-top {
+  z-index: 0;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+}
+
+/* keyframe */
+@keyframes roll {
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes roll-Z {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes fade-in {
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes half-shine {
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* transform */
+.fade-enter-active,
+.fade-leave-active {
+  transition: 1s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.right-enter-active,
+.right-leave-active {
+  transition: 1s;
+}
+.right-enter-from,
+.right-leave-to {
+  transform: translate(-200%);
+  opacity: 0;
+}
+
+/* X-icon */
+.x-gadget {
+  transform: scaleX(1.5);
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+  font-size: 24px;
+  background-image: linear-gradient(
+    to bottom,
+    rgb(226, 202, 147),
+    rgb(216, 160, 30),
+    black
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
